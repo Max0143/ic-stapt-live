@@ -1,34 +1,24 @@
+
 <html>
+<head>
+<title>IC-Stapt Live</title>
+<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+</head>
 <body>
-<title>IC Stapt Live</title></head>
-<div align="center" class="fullscreen">
-    <div id="player-wrapper" class="fullscreen">
-  </div>
-  </div>
-  
-   <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dash-shaka-playback@latest/dist/dash-shaka-playback.min.js"></script>
-  <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
-  <script type="text/javascript" charset="utf-8">
-  document.addEventListener("DOMContentLoaded", function() {
-    console.log('Clappr version ' + Clappr.version);
 
-    var player = new Clappr.Player({
-      source: 'https://ic-stapt.cloudpub.ru/live/hls/stream.m3u8',
-      parentId: '#player-wrapper',
-      plugins: [
-        LevelSelector,
-        DashShakaPlayback,
-      ],
-      width: '100%',
-      height: '100%',
-      hideMediaControl: true,
-      autoPlay: true
-    });
+<video id="icc" class="video-js vjs-default-skin vjs-fill vjs-big-play-centered" autoplay controls>
+<source type="application/x-mpegURL" src="https://ic-stapt.cloudpub.ru/live/hls/stream.m3u8">
+</video>
 
-  });
-  </script>
 
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+<script>
+
+var player = videojs('icc');
+player.play();
+
+</script>
 </body>
 </html>
